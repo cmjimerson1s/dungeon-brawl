@@ -1,5 +1,4 @@
 
-document.addEventListener("DOMContentLoaded", function() {
     
     let buttons = document.getElementsByTagName("button");
 
@@ -13,4 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 })
 }
-})
+
+
+let round = document.getElementById("round-count").textContent;
