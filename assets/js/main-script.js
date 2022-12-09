@@ -13,4 +13,8 @@ function gameStart () {
 function fighterAttack() {
     let num1 = Math.floor(Math.random() * 20) + 1;
     let warriorRoll = document.getElementById('warrior-dice-value').textContent = num1;
+    if(warriorRoll >= acRateGoblin) {
+        let num2 = Math.floor(Math.random() * 12) + 1;
+        let fighterRoundDmg = document.getElementById('warrior-dmg-value').textContent = num2;
+    }
 }
