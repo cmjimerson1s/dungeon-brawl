@@ -8,3 +8,8 @@ document.addEventListener('DOMContentLoaded', gameStart);
 function gameStart () {
     let round = 0;
 }
+
+function fighterAttack() {
+    let num1 = Math.floor(Math.random() * 20) + 1;
+    let warriorRoll = document.getElementById('warrior-dice-value').textContent = num1;
+}
