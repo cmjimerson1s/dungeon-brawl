@@ -19,6 +19,7 @@ function fighterAttack() {
         roundResult();
         let roundDmg = document.getElementById('enemy-health-value').innerHTML
         setTimeout(() => alert('You hit! You did ' +num2+ ' damage! The goblin only has ' +roundDmg+ ' health left!'), 500);
+        roundUp();
     }
 }
 
@@ -26,4 +27,8 @@ function roundResult ( ) {
 
     let roundDmg = (Math.max(0, ((parseInt(document.getElementById('enemy-health-value').innerText)) - (parseInt(document.getElementById('warrior-dmg-value').innerText)))));
     document.getElementById('enemy-health-value').innerHTML = roundDmg;
+}
+
+function roundUp () {
+    document.getElementById('round-count').innerText = ++round;
 }
