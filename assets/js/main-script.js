@@ -13,14 +13,21 @@ function gameStart () {
 function fighterAttack() {
     let num1 = Math.floor(Math.random() * 20) + 1;
     let warriorRoll = document.getElementById('warrior-dice-value').textContent = num1;
-    if(warriorRoll >= acRateGoblin) {
-        let num2 = Math.floor(Math.random() * 12) + 1;
-        let fighterRoundDmg = document.getElementById('warrior-dmg-value').textContent = num2;
-        roundResult();
-        let roundDmg = document.getElementById('enemy-health-value').innerHTML
-        setTimeout(() => alert('You hit! You did ' +num2+ ' damage! The goblin only has ' +roundDmg+ ' health left!'), 500);
-        roundUp();
-    }
+        if(warriorRoll >= acRateGoblin) {
+            let num2 = Math.floor(Math.random() * 12) + 1;
+            let fighterRoundDmg = document.getElementById('warrior-dmg-value').textContent = num2;
+            roundResult();
+            let roundDmg = document.getElementById('enemy-health-value').innerHTML
+            setTimeout(() => alert('You hit! You did ' +num2+ ' damage! The goblin only has ' +roundDmg+ ' health left!'), 500);
+            roundUp();
+        } else {
+            alert('You missed! Now it is the enemies turn!');
+            roundUp();
+        }
+}
+
+function enemyAttack() {
+    
 }
 
 function roundResult ( ) {
