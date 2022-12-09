@@ -1,18 +1,19 @@
 const acRate = 16;
 const acRateGoblin = 8;
-let round = parseInt(document.getElementById('round-count').innerText);
 
-document.addEventListener('DOMContentLoaded', gameStart);
+document.getElementById('dice-roll-attk').addEventListener('click', function() {
+    if (parseInt(document.getElementById("round-count").innerText) %2 == 0 ) {
+        fighterAttack();
+    } else {
+        enemyAttack();
+    }    
+})
 
-document.getElementById('dice-roll-attk').addEventListener('click', fighterAttack);
 
-function gameStart () {
-    let round = 0;
-}
 
 function fighterAttack() {
     let num1 = Math.floor(Math.random() * 20) + 1;
-    let warriorRoll = document.getElementById('warrior-dice-value').textContent = 4;
+    let warriorRoll = document.getElementById('warrior-dice-value').textContent = num1;
         if(warriorRoll >= acRateGoblin) {
             let num2 = Math.floor(Math.random() * 12) + 1;
             document.getElementById('warrior-dmg-value').textContent = num2;
@@ -23,7 +24,6 @@ function fighterAttack() {
         } else {
             setTimeout(() => alert('You missed! Now it is the enemies turn!'), 500);
             roundUp();
-            enemyAttack();
         }
 }
 
@@ -31,11 +31,12 @@ function enemyAttack() {
     let num4 = Math.floor(Math.random() * 20) + 1;
     let goblinRoll = document.getElementById('enemy-attk-roll').textContent = num4;
         if(goblinRoll >= acRate) {
-            let num3 = Math.floor(Math.random() * 6) + 1;
+            let num3 = Math.floor(Math.random() * 10) + 1;
             document.getElementById('enemy-hit-value').textContent = num3;
             goblinRoundResult();
             let goblinRoundDmg = document.getElementById('warrior-health-amount').innerHTML;
-            setTimeout(() => alert('You were hit! The goblin did ' +num3+ ' damage! You only have ' +roundDmg+ ' health left!'), 500);
+            setTimeout(() => alert('You were hit! The goblin did ' +num3+ ' damage! You only have ' +goblinRoundDmg+ ' health left!'), 500);
+            roundUp();
         }
 }
 
@@ -51,5 +52,6 @@ function goblinRoundResult() {
 }
 
 function roundUp () {
-    document.getElementById('round-count').innerText = ++round;
+    let oldRound = parseInt(document.getElementById('round-count').innerText);
+    document.getElementById('round-count').innerText = ++oldRound;
 }
