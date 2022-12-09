@@ -1,9 +1,10 @@
 const acRate = 16;
 const acRateGoblin = 8;
-
 let round = parseInt(document.getElementById('round-count').innerText);
 
 document.addEventListener('DOMContentLoaded', gameStart);
+
+document.getElementById('dice-roll-attk').addEventListener('click', fighterAttack);
 
 function gameStart () {
     let round = 0;
