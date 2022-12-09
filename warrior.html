@@ -7,12 +7,12 @@
     <title>Dungeon-Brawler</title>
 </head>
 <body>
-    <div>
     <a href="index.html" id="warrior-home" class="pick-fighter">Choose Your Fighter</a>
     <div id="warrior-class">Class: Warrior</div>
     <div id="warrior-name">Name: Conan the Barb</div>
+    <div id="defense">Defense Rating: 16</div>
     <div id="warrior-health">Health: <span id="warrior-health-amount">45</span></div>
-    <button data-type="warrior-roll">Attack Roll!</button>
+    <button id="dice-roll-attk" data-type="warrior-roll">Attack Roll!</button>
     <div id="warrior-dice-roll"><span id="warrior-dice-value">0</span></div>
     <button data-type="warrior-dmg">Damage Roll!</button>
     <div id="warrior-dmg-roll"><span id="warrior-dmg-value">0</span></div>
@@ -22,8 +22,9 @@
     <br>
     <div>
     <div id="enemy-name">Goblin</div>
-    <div id="armor-class">AC: <span id="armor-class-value">10</span></div>
+    <div id="armor-class">Defense Rating: 8</div>
     <div id="enemy-health">Health: <span id="enemy-health-value">23</span></div>
+    <div id="enemy-attk">Attack Roll: <span id="enemy-attk-roll">0</span></div>
     <div id="enemy-hit">Attack Damage: <span id="enemy-hit-value">0</span></div>
     <div></div>
     </div>  
