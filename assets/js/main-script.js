@@ -16,5 +16,14 @@ function fighterAttack() {
     if(warriorRoll >= acRateGoblin) {
         let num2 = Math.floor(Math.random() * 12) + 1;
         let fighterRoundDmg = document.getElementById('warrior-dmg-value').textContent = num2;
+        roundResult();
+        let roundDmg = document.getElementById('enemy-health-value').innerHTML
+        setTimeout(() => alert('You hit! You did ' +num2+ ' damage! The goblin only has ' +roundDmg+ ' health left!'), 500);
     }
+}
+
+function roundResult ( ) {
+
+    let roundDmg = (Math.max(0, ((parseInt(document.getElementById('enemy-health-value').innerText)) - (parseInt(document.getElementById('warrior-dmg-value').innerText)))));
+    document.getElementById('enemy-health-value').innerHTML = roundDmg;
 }
